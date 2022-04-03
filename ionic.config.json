@@ -1,7 +1,10 @@
 {
   "name": "LabTest2_SanjayKannan",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }

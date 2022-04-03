@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Location Finder
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,25 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Location Finder</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div style="background-color: rgb(244, 180, 53);">
+    <h3>Your previous location was</h3>
+    <p>Latitude: {{lat}}</p>
+    <p>Longitude: {{lng}}</p>
+      <ion-button (click)="myLocation()">My Location</ion-button>
   </div>
+
+  <ion-list>
+    <ion-item *ngFor="let x of locationList; let i = index">
+    {{x}}
+      <div class="item-note" slot="end">
+        <ion-button color="danger" (click)="removeLocation(i)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>
